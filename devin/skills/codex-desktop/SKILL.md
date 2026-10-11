@@ -14,8 +14,8 @@ How to use the Codex desktop app for the Project Neo run. Only Codex-specific fa
 
 ## Signing in to Codex (email code)
 - Sign in with the documented account's email using the email + one-time-code option. Never use Google SSO and never open any mailbox.
-- When the code is requested, post exactly `WAITING FOR CODE: OpenAI` and wait for the code in chat.
-- If no code arrives within about 3 minutes, or it is rejected or expired, request a fresh code and post the line again. Retry at most 2 times, then stop and report.
+- The code will arrive in chat.
+- If no code arrives within about 3 minutes, or it is rejected or expired, request a fresh code. Retry at most 2 times, then stop and report.
 - Never use password reset, account recovery, API keys or billing.
 
 ## Reference
