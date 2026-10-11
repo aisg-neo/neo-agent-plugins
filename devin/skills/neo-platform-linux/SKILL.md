@@ -33,3 +33,5 @@ Platform reference for `Project Neo - Run All Exercises Against a Desktop Coding
 ## Do not
 - Do not use `xdotool key super+Up` for window management.
 - Do not run installs with sudo; if a step truly needs it, ask the user to run it.
+<!-- plugin-sync-test 2026-10-11 -->
+Plugin sync marker: v2 (2026-10-11)
