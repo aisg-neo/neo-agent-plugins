@@ -1,12 +1,12 @@
 ---
-name: neo-platform-linux
+name: linux
 description: "Project Neo evaluation on a Linux desktop VM: nvm/Node PATH, user-space installs, window management, tmux/xdotool text entry, npx cache, path syntax. Use with any Project Neo exercise playbook when the VM is Linux."
 ---
 
 # Project Neo - Platform: Linux
 
 ## Overview
-Platform reference for `Project Neo - Run All Exercises Against a Desktop Coding Agent` for running the exercises on a Linux desktop VM (Ubuntu with X on `:0`). Covers nvm/Node, launching desktop or TUI agents with the right environment, window management, clipboard/typing automation and package installation. Harness specifics stay in the `neo-harness-<agent>` skill; exercise playbooks refer here as "the platform skill".
+Platform reference for `Project Neo - Run All Exercises Against a Desktop Coding Agent` for running the exercises on a Linux desktop VM (Ubuntu with X on `:0`). Covers nvm/Node, launching desktop or TUI agents with the right environment, window management, clipboard/typing automation and package installation. Harness specifics stay in the `<agent>-<type>` skill; exercise playbooks refer here as "the platform skill".
 
 ## Inputs to confirm with the user
 - Nothing beyond the main playbook; sudo is generally unavailable, so prefer user-space installs (nvm, `~/.local/bin`, release tarballs).

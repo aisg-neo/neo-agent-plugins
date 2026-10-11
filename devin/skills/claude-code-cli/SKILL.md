@@ -1,12 +1,12 @@
 ---
-name: neo-harness-claude-code-cli
+name: claude-code-cli
 description: "Claude Code CLI (terminal `claude`) through a third-party Anthropic-compatible gateway: native install, settings.json gateway env, model selection, onboarding, permission modes, headless `-p`, MCP/skills/subagents, session JSONL logs and token fields. Use when the agent under test is the Claude Code CLI (not the Desktop app)."
 ---
 
 # Project Neo - Harness: Claude Code CLI
 
 ## Overview
-How to use the Claude Code CLI (`claude` in a terminal) with a gateway instead of an Anthropic account. Only harness-specific facts are here: exercise steps live in the exercise playbooks, and OS specifics are in `neo-platform-<os>`. The agent features and log format are shared with `neo-harness-claude-code-desktop`. Facts were checked on Windows Server 2022 with Claude Code 2.1.295 against `https://llm-gateway.aisg.sg`; re-check them when the CLI updates.
+How to use the Claude Code CLI (`claude` in a terminal) with a gateway instead of an Anthropic account. Only harness-specific facts are here: exercise steps live in the exercise playbooks, and OS specifics are in the platform skill (`macos`, `linux`, or `windows`). The agent features and log format are shared with `claude-code-desktop`. Facts were checked on Windows Server 2022 with Claude Code 2.1.295 against `https://llm-gateway.aisg.sg`; re-check them when the CLI updates.
 
 ## Inputs to confirm with the user
 - Gateway base URL and API key, as saved secrets. Ask about the key's spend budget: a budget 429 stops every request.
@@ -43,7 +43,7 @@ How to use the Claude Code CLI (`claude` in a terminal) with a gateway instead o
    - `Esc` cancels a dialog or interrupts a turn; `/exit` quits; `-c` continues and `-r <id>` resumes a session.
    - The TUI composer sends on Enter. When driving it from a script/PTY, send the text, then a separate Enter.
    - The turn footer `✻ <verb> for 11s` is the agent time.
-5. **Feature map** (same agent as Desktop; see `neo-harness-claude-code-desktop` for details)
+5. **Feature map** (same agent as Desktop; see `claude-code-desktop` for details)
    - **Plan mode:** `shift+tab` until `plan mode on`, or `--permission-mode plan`.
    - **Context file:** `/init` creates `CLAUDE.md`. **Compaction:** `/compact`, plus auto-compaction (`--autocompact`).
    - **MCP:** `claude mcp add <name> -- <cmd> <args>` (stdio) or `claude mcp add --transport http <name> <url>`; `-s local|user|project` (project writes `.mcp.json`). Unlike Desktop, a project `.mcp.json` server stays `Pending approval` until approved in the TUI; `claude mcp list` shows the state; tools are named `mcp__<server>__<tool>`.

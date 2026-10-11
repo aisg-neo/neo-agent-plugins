@@ -1,12 +1,12 @@
 ---
-name: neo-harness-opencode-litellm
+name: opencode-desktop
 description: "OpenCode (Desktop by default, TUI on request) driven through a LiteLLM gateway: install, provider config, environment inheritance, where each feature lives, session storage, export, and token fields. Use when the agent under test is OpenCode."
 ---
 
 # Project Neo - Harness: OpenCode via LiteLLM
 
 ## Overview
-How to use OpenCode for the Project Neo run. Only OpenCode-specific facts are here: exercise steps live in the exercise playbooks, and OS specifics are in `neo-platform-<os>`. Default to OpenCode Desktop (Electron). Use the TUI (`opencode` in a terminal) only when the user asks. The Desktop and the CLI share one version, config, database and log. Facts were checked against 1.18.34; re-check them when the version changes.
+How to use OpenCode for the Project Neo run. Only OpenCode-specific facts are here: exercise steps live in the exercise playbooks, and OS specifics are in the platform skill (`macos`, `linux`, or `windows`). Default to OpenCode Desktop (Electron). Use the TUI (`opencode` in a terminal) only when the user asks. The Desktop and the CLI share one version, config, database and log. Facts were checked against 1.18.34; re-check them when the version changes.
 
 ## Inputs to confirm with the user
 - Mode: Desktop or TUI.

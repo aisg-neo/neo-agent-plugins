@@ -1,12 +1,12 @@
 ---
-name: neo-platform-windows
+name: windows
 description: "Project Neo evaluation on a Windows VM: Node/PATH and app relaunch rules, CRLF line-ending churn, winget, npx cache, path syntax, GUI automation. Use with any Project Neo exercise playbook when the VM is Windows."
 ---
 
 # Project Neo - Platform: Windows
 
 ## Overview
-Platform reference for `Project Neo - Run All Exercises Against a Desktop Coding Agent` for running the exercises on a Windows VM. Covers Node/PATH, line endings, package managers, npx cache, app relaunch rules and GUI automation. Harness specifics stay in the `neo-harness-<agent>` skill; exercise playbooks refer here as "the platform skill".
+Platform reference for `Project Neo - Run All Exercises Against a Desktop Coding Agent` for running the exercises on a Windows VM. Covers Node/PATH, line endings, package managers, npx cache, app relaunch rules and GUI automation. Harness specifics stay in the `<agent>-<type>` skill; exercise playbooks refer here as "the platform skill".
 
 ## Inputs to confirm with the user
 - Nothing beyond the main playbook; confirm the VM has admin rights for `winget` if a system install is needed.

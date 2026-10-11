@@ -1,12 +1,12 @@
 ---
-name: neo-harness-agnes-code
+name: agnes-code-desktop
 description: "Agnes Code desktop (Sapiens AI, goose-based Electron app with an agnesd backend): install, sign-in, environment inheritance, where each feature lives, LLM logs and sessions.db, Share Diagnostics export, and usage fields. Use when the agent under test is Agnes Code."
 ---
 
 # Project Neo - Harness: Agnes Code
 
 ## Overview
-How to use Agnes Code for the Project Neo run. Only Agnes-specific facts are here: exercise steps live in the exercise playbooks, and OS specifics are in `neo-platform-<os>`. Facts were checked on Windows with v1.0.60; re-check them when the version changes.
+How to use Agnes Code for the Project Neo run. Only Agnes-specific facts are here: exercise steps live in the exercise playbooks, and OS specifics are in the platform skill (`macos`, `linux`, or `windows`). Facts were checked on Windows with v1.0.60; re-check them when the version changes.
 
 ## Inputs to confirm with the user
 - The model, as shown in the composer model picker (Agnes models plus third-party ones). There is no reasoning-effort setting; Settings -> response style is `concise` by default.
