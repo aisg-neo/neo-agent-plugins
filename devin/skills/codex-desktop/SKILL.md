@@ -16,6 +16,14 @@ How to use the Codex desktop app for the Project Neo run. Only Codex-specific fa
   3. Google 2-Step Verification follows and no TOTP secret is provisioned, so hand off to the user on the Desktop tab.
   - If 2SV times out ("Couldn't sign you in"), use the app's "Cancel sign-in", then sign in again.
 
+## Signing in to Codex (email code)
+- On Linux or headless machines, install the CLI first: `npm install -g @openai/codex`.
+- Sign in with the documented account's email using the email + one-time-code option. Never use Google SSO and never open any mailbox.
+- When the code is requested, post exactly `WAITING FOR CODE: OpenAI` and wait for the code in chat.
+- If no code arrives within about 3 minutes, or it is rejected or expired, request a fresh code and post the line again. Retry at most 2 times, then stop and report.
+- Never use password reset, account recovery, API keys or billing.
+- Verify with one prompt: `ping - reply with pong` (expected reply: `pong`).
+
 ## Reference
 1. **Install and update**
    - macOS: `brew install --cask codex` installs the CLI `codex` and `Codex.app`.
