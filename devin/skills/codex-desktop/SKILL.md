@@ -10,11 +10,7 @@ How to use the Codex desktop app for the Project Neo run. Only Codex-specific fa
 
 ## Inputs to confirm with the user
 - The model, as shown in the composer picker, and the reasoning effort (Light / Standard / Extended / Max; default Light).
-- Sign-in method. For Google SSO:
-  1. "Continue to sign in" opens the default browser at auth.openai.com; choose "Continue with Google".
-  2. Enter `${CODEX_GOOGLE_LOGIN_EMAIL}` and `${CODEX_GOOGLE_LOGIN_PASSWORD}`.
-  3. Google 2-Step Verification follows and no TOTP secret is provisioned, so hand off to the user on the Desktop tab.
-  - If 2SV times out ("Couldn't sign you in"), use the app's "Cancel sign-in", then sign in again.
+- Sign-in: follow "Signing in to Codex (email code)" below.
 
 ## Signing in to Codex (email code)
 - On Linux or headless machines, install the CLI first: `npm install -g @openai/codex`.
