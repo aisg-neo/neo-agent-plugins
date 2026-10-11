@@ -1,12 +1,12 @@
 ---
-name: neo-platform-macos
+name: macos
 description: "Project Neo evaluation on macOS: Homebrew/Node, PATH inheritance of desktop apps, privacy dialogs, GUI automation. Use with any Project Neo exercise playbook when the VM is macOS."
 ---
 
 # Project Neo - Platform: macOS
 
 ## Overview
-Platform reference for `Project Neo - Run All Exercises Against a Desktop Coding Agent` for running the exercises on macOS. Covers Homebrew/Node, PATH inheritance for desktop apps, privacy dialogs, line endings and GUI automation. Harness specifics stay in the `neo-harness-<agent>` skill; exercise playbooks refer here as "the platform skill".
+Platform reference for `Project Neo - Run All Exercises Against a Desktop Coding Agent` for running the exercises on macOS. Covers Homebrew/Node, PATH inheritance for desktop apps, privacy dialogs, line endings and GUI automation. Harness specifics stay in the `<agent>-<type>` skill; exercise playbooks refer here as "the platform skill".
 
 ## Inputs to confirm with the user
 - Nothing beyond the main playbook; the user completes any browser SSO/2FA on the Desktop tab.

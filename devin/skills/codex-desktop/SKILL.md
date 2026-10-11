@@ -1,12 +1,12 @@
 ---
-name: neo-harness-codex-desktop
+name: codex-desktop
 description: "OpenAI Codex desktop app (Codex mode of the ChatGPT app): install and update, sign-in, environment inheritance, where each feature lives, rollout logs, session export, and token fields. Use when the agent under test is Codex."
 ---
 
 # Project Neo - Harness: Codex Desktop
 
 ## Overview
-How to use the Codex desktop app for the Project Neo run. Only Codex-specific facts are here: exercise steps live in the exercise playbooks, and OS specifics are in `neo-platform-<os>`. Re-check version-specific details when the app updates.
+How to use the Codex desktop app for the Project Neo run. Only Codex-specific facts are here: exercise steps live in the exercise playbooks, and OS specifics are in the platform skill (`macos`, `linux`, or `windows`). Re-check version-specific details when the app updates.
 
 ## Inputs to confirm with the user
 - The model, as shown in the composer picker, and the reasoning effort (Light / Standard / Extended / Max; default Light).

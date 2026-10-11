@@ -1,12 +1,12 @@
 ---
-name: neo-harness-claude-code-desktop
+name: claude-code-desktop
 description: "Claude Code inside the Claude Desktop app (Code tab) through a third-party Anthropic-compatible gateway: install, Developer-Mode gateway setup, model/effort/permission controls, where each feature lives, sandbox limits, session JSONL logs and export, and token fields. Use when the agent under test is Claude Code Desktop."
 ---
 
 # Project Neo - Harness: Claude Code Desktop
 
 ## Overview
-How to use Claude Code in the Claude Desktop app (Code tab) with a gateway instead of an Anthropic account. Only harness-specific facts are here: exercise steps live in the exercise playbooks, and OS specifics are in `neo-platform-<os>`. Facts were checked on macOS with Claude Desktop 2.9939.2 / Claude Code 2.1.281; re-check them when the app updates.
+How to use Claude Code in the Claude Desktop app (Code tab) with a gateway instead of an Anthropic account. Only harness-specific facts are here: exercise steps live in the exercise playbooks, and OS specifics are in the platform skill (`macos`, `linux`, or `windows`). Facts were checked on macOS with Claude Desktop 2.9939.2 / Claude Code 2.1.281; re-check them when the app updates.
 
 ## Inputs to confirm with the user
 - Gateway base URL and API key, as saved secrets. Ask about the key's spend budget: a budget 429 stops every request.
