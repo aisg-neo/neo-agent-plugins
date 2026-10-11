@@ -18,7 +18,6 @@ How to use the Codex desktop app for the Project Neo run. Only Codex-specific fa
 - When the code is requested, post exactly `WAITING FOR CODE: OpenAI` and wait for the code in chat.
 - If no code arrives within about 3 minutes, or it is rejected or expired, request a fresh code and post the line again. Retry at most 2 times, then stop and report.
 - Never use password reset, account recovery, API keys or billing.
-- Verify with one prompt: `ping - reply with pong` (expected reply: `pong`).
 
 ## Reference
 1. **Install and update**
