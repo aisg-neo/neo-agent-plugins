@@ -16,7 +16,6 @@ How to use the Codex desktop app for the Project Neo run. Only Codex-specific fa
 - Sign in with the documented account's email using the email + one-time-code option. Never use Google SSO and never open any mailbox.
 - The code will arrive in chat.
 - If no code arrives within about 3 minutes, or it is rejected or expired, request a fresh code. Retry at most 2 times, then stop and report.
-- Never use password reset, account recovery, API keys or billing.
 
 ## Reference
 1. **Install and update**
