@@ -9,7 +9,7 @@ description: "Claude Code CLI (terminal `claude`) through a third-party Anthropi
 How to use the Claude Code CLI (`claude` in a terminal) with a gateway instead of an Anthropic account. Only harness-specific facts are here: exercise steps live in the exercise playbooks, and OS specifics are in the platform skill (`macos`, `linux`, or `windows`). The agent features and log format are shared with `claude-code-desktop`. Facts were checked on Windows Server 2022 with Claude Code 2.1.295 against `https://llm-gateway.aisg.sg`; re-check them when the CLI updates.
 
 ## Inputs to confirm with the user
-- Gateway base URL and API key, as saved secrets. Ask about the key's spend budget: a budget 429 stops every request.
+- Gateway base URL and API key, as saved secrets.
 - The model id the gateway exposes for that key (`GET $URL/v1/models`). The CLI's default model is not on the gateway (see step 2).
 - Effort (`low` / `medium` / `high` / `xhigh` / `max`) and permission mode.
 

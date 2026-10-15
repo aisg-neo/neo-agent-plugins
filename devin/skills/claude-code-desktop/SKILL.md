@@ -9,7 +9,7 @@ description: "Claude Code inside the Claude Desktop app (Code tab) through a thi
 How to use Claude Code in the Claude Desktop app (Code tab) with a gateway instead of an Anthropic account. Only harness-specific facts are here: exercise steps live in the exercise playbooks, and OS specifics are in the platform skill (`macos`, `linux`, or `windows`). Facts were checked on macOS with Claude Desktop 2.9939.2 / Claude Code 2.1.281; re-check them when the app updates.
 
 ## Inputs to confirm with the user
-- Gateway base URL and API key, as saved secrets. Ask about the key's spend budget: a budget 429 stops every request.
+- Gateway base URL and API key, as saved secrets.
 - The model id the gateway exposes (`/v1/models`) and the effort (Low / Medium / High; default High).
 
 ## Reference
