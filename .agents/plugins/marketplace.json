@@ -1,0 +1,12 @@
+{
+  "name": "neo-agent-plugins",
+  "interface": { "displayName": "Neo agent plugins" },
+  "plugins": [
+    {
+      "name": "writer",
+      "source": { "source": "local", "path": "./agents" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

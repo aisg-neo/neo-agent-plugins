@@ -1,0 +1,16 @@
+{
+  "name": "neo-agent-plugins",
+  "owner": {
+    "name": "AI Singapore"
+  },
+  "metadata": {
+    "description": "AI Singapore agent plugins: essay review skills and more."
+  },
+  "plugins": [
+    {
+      "name": "writer",
+      "source": "./claude",
+      "description": "Essay review skills: architecture, patterns and framing reviewers, plus a combined essay review."
+    }
+  ]
+}
