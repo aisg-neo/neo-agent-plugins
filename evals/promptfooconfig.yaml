@@ -1,6 +1,11 @@
 # yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
 description: Essay review skills score calibration
 
+# `npm run share` uploads to the self-hosted promptfoo, never promptfoo.app.
+sharing:
+  apiBaseUrl: https://eval.kongfast.cloud
+  appBaseUrl: https://eval.kongfast.cloud
+
 prompts:
   - file://lib/prompt.js
 

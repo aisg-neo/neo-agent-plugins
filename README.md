@@ -69,3 +69,24 @@ Results of every run are saved locally in `~/.promptfoo/promptfoo.db`:
 - `npm run summary` prints the latest run as a table: pass or fail, provider, case, scores, and which check failed.
 - `npm run list` lists past runs; `npm run summary -- <eval id>` prints one of them.
 - `npm run view` opens the promptfoo web viewer on port 15500 for full outputs.
+
+### Sharing results
+
+Runs stay local until you share them. Share only the final run for a Linear issue, and start it with the issue ID as its description so it can be traced back to the issue and its PR:
+
+```bash
+npm run eval -- --description "KFC-21: hedging rule"
+npm run share
+```
+
+`npm run share` uploads the latest run to the self-hosted promptfoo at https://eval.kongfast.cloud, where Grok Bot and other agents read it through the Executor `promptfoo` app. The server has no login, so anyone on the LAN or tailnet can view or delete runs.
+
+### Adding articles
+
+Good articles are linked in a Linear issue. To pin one as an eval case:
+
+```bash
+npm run import -- <url> --issue ENG-123
+```
+
+This writes `evals/cases/<slug>/article.md` with the source, issue and fetch date in its frontmatter, and downloads the article's images into `images/` next to it. Review the file before committing: extraction can keep page leftovers such as bylines, and pages that need JavaScript or sit behind a paywall fail with an error.
