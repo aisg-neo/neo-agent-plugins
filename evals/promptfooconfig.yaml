@@ -1,0 +1,106 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+description: Essay review skills score calibration
+
+prompts:
+  - file://lib/prompt.js
+
+# The harnesses use your normal Claude Code and Codex setup (the Kong gateway, backed
+# by your subscriptions). Only raw-api goes through Vercel AI Gateway, with
+# AI_GATEWAY_API_KEY loaded from Infisical.
+providers:
+  - id: anthropic:claude-agent-sdk
+    label: claude-code
+    config:
+      model: sonnet
+      plugins:
+        - type: local
+          path: ../claude
+      skills: all
+      max_turns: 10
+      # Auth comes from ANTHROPIC_AUTH_TOKEN in your environment, not an Anthropic API key.
+      apiKeyRequired: false
+
+  - id: openai:codex-sdk
+    label: codex
+    config:
+      working_dir: .workspace
+      skip_git_repo_check: true
+      sandbox_mode: read-only
+      approval_policy: never
+
+  - id: vercel:google/gemini-3.8-flash
+    label: raw-api
+    config:
+      maxTokens: 16000
+      temperature: 0
+
+defaultTest:
+  options:
+    transform: file://lib/parse.js
+
+# Each broken variant changes one thing in the example essay. It should lower the
+# category that checks that thing and leave unrelated categories high.
+tests:
+  - description: sentence / original essay scores well
+    vars:
+      skill: essay-sentence-review
+      essay: file://../agents/skills/essay-sentence-review/references/example-essay.md
+    assert:
+      - type: javascript
+        value: output.scores.characters_and_actions >= 4
+      - type: javascript
+        value: output.scores.word_choice >= 4
+      - type: javascript
+        value: output.scores.syntactic_clarity >= 4
+
+  - description: sentence / later synonyms for key terms count as drift
+    vars:
+      skill: essay-sentence-review
+      essay: file://cases/term-drift.md
+    assert:
+      - type: javascript
+        value: output.scores.key_term_consistency <= 3
+      - type: javascript
+        value: (output.key_terms ?? []).some((t) => t.drift.length > 0)
+      - type: javascript
+        value: output.scores.syntactic_clarity >= 4
+
+  - description: sentence / nominalizations and inflated words
+    vars:
+      skill: essay-sentence-review
+      essay: file://cases/nominalized.md
+    assert:
+      - type: javascript
+        value: output.scores.characters_and_actions <= 3
+      - type: javascript
+        value: output.scores.word_choice <= 3
+
+  - description: sentence / ambiguous references and modifiers
+    vars:
+      skill: essay-sentence-review
+      essay: file://cases/ambiguous.md
+    assert:
+      - type: javascript
+        value: output.scores.syntactic_clarity <= 3
+
+  - description: architecture / original essay scores well
+    vars:
+      skill: essay-architecture-review
+      essay: file://../agents/skills/essay-architecture-review/references/example-essay.md
+    assert:
+      - type: javascript
+        value: output.scores.index_discussion >= 4
+      - type: javascript
+        value: output.scores.fractal_structure >= 4
+      - type: javascript
+        value: output.scores.section_point_placement >= 4
+      - type: javascript
+        value: "!('key_term_coherence' in output.scores)"
+
+  - description: architecture / Points stated twice
+    vars:
+      skill: essay-architecture-review
+      essay: file://cases/repeated-points.md
+    assert:
+      - type: javascript
+        value: output.scores.section_point_placement <= 3

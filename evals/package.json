@@ -1,0 +1,17 @@
+{
+  "name": "neo-agent-plugins-evals",
+  "private": true,
+  "scripts": {
+    "workspace": "node lib/workspace.js",
+    "eval": "npm run workspace && infisical run --projectId ea4709c1-b7ae-478a-bacd-ee21a8b2c176 --env dev --path /skills -- promptfoo eval --no-cache",
+    "view": "promptfoo view",
+    "summary": "node lib/summary.js",
+    "list": "promptfoo list evals"
+  },
+  "devDependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.310",
+    "@infisical/cli": "^0.44.9",
+    "@openai/codex-sdk": "^0.156.1",
+    "promptfoo": "0.125.1"
+  }
+}
