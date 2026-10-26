@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "workspace": "node lib/workspace.js",
-    "eval": "npm run workspace && infisical run --projectId ea4709c1-b7ae-478a-bacd-ee21a8b2c176 --env dev --path /skills -- promptfoo eval --no-cache",
+    "eval": "npm run workspace && PROMPTFOO_DISABLE_TEMPLATING=true infisical run --projectId ea4709c1-b7ae-478a-bacd-ee21a8b2c176 --env dev --path /skills -- promptfoo eval --no-cache",
     "view": "promptfoo view",
     "summary": "node lib/summary.js",
     "list": "promptfoo list evals",
