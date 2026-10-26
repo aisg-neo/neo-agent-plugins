@@ -21,6 +21,7 @@ Paragraphs can also connect locally when one paragraph's Comment supplies the ne
 1. Constant theme: the same element appears as the Topic in successive clauses. Each Comment adds new information about it.
    Good: "The flask keeps water warm. It fits in a pocket. It has a sealed lid."
    Bad: "Warmth is retained by the flask. A pocket can hold it. Its lid has a seal." The focal element moves out of Topic position.
+   The fault is that the focal element left the Topic position; passive voice itself is fine when it keeps familiar information first.
 
 2. Linking: a Comment introduces relevant new information that the next clause picks up as its Topic before adding another Comment. The chain continues developing the unit's established point or relationship.
    Good: "A sensor emits a pulse. The pulse reaches a switch. The switch starts the pump."
@@ -33,6 +34,7 @@ Paragraphs can also connect locally when one paragraph's Comment supplies the ne
 4. Theme preview: a paragraph's Index previews key terms that later clauses or sentences pick up in the same order.
    Good: "A login has two checks: identity and permission. Identity confirms the user. Permission controls access."
    Bad: "A login has two checks: identity and permission. Permission controls access. Identity confirms the user." The Discussion reverses the previewed order.
+   Once terms are previewed, keep their labels. A synonym for a previewed term is acceptable only if it was introduced alongside the term early on; a synonym that first appears later counts as a changed label.
 
 ## How to review
 
@@ -70,8 +72,8 @@ Execution of constant theme and linking wherever ideas must stay anchored or mov
 ### Thematic coherence
 Whether super theme and theme preview establish the thematic strings their Discussions develop, and whether constant themes remain stable inside them.
 - 5: units consistently establish and sustain the appropriate thematic pattern; previewed or implied parts are developed in a coherent order.
-- 4: one thematic string weakens, changes label, or departs briefly from its established pattern.
-- 3: one unit lacks a needed super theme or theme preview, or several strings drift enough to disrupt development.
+- 4: one thematic string weakens or departs briefly from its established pattern.
+- 3: one unit lacks a needed super theme or theme preview, a previewed term is missing or appears under a changed label, or several strings drift enough to disrupt development. A changed label costs as much as a missing term.
 - 2: several units present parts, examples, or parallel ideas without patterns that establish their relationship.
 - 1: no stable thematic organization for substantive units.
 

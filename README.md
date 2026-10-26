@@ -16,9 +16,10 @@ Essay review skills converted from the Executor Writer app:
 
 | Skill | Checks |
 | --- | --- |
-| `essay-review` | Runs the three reviews below in order and combines them into one editor's report |
-| `essay-architecture-review` | Index-Discussion, fractal structure, section Point placement, key-term coherence |
+| `essay-review` | Runs the four reviews below in order and combines them into one editor's report |
+| `essay-architecture-review` | Index-Discussion, fractal structure, section Point placement |
 | `essay-patterns-review` | Constant theme, linking, super theme, theme preview within units |
+| `essay-sentence-review` | Characters and actions, stress position, key-term consistency, word choice, syntactic clarity |
 | `essay-framing-review` | Title, introduction, whole-essay promise, conclusion |
 
 ### Install in Claude Code

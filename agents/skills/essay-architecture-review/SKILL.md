@@ -1,15 +1,15 @@
 ---
 name: essay-architecture-review
-description: "Discourse architecture review. Checks how an essay organizes and connects its argument across levels: whether each unit opens with an Index that frames its Discussion, whether that structure repeats from essay to section to paragraph, where each section states its Point, and whether key terms carry through. Run this before the writing patterns review. Its section map fixes the unit boundaries that review works within."
+description: "Discourse architecture review. Checks how an essay organizes and connects its argument across levels: whether each unit opens with an Index that frames its Discussion, whether that structure repeats from essay to section to paragraph, and where each section states its Point. Run this before the writing patterns review. Its section map fixes the unit boundaries that review works within."
 ---
 
 # Discourse architecture review
 
-Checks how an essay organizes and connects its argument across levels: whether each unit opens with an Index that frames its Discussion, whether that structure repeats from essay to section to paragraph, where each section states its Point, and whether key terms carry through.
+Checks how an essay organizes and connects its argument across levels: whether each unit opens with an Index that frames its Discussion, whether that structure repeats from essay to section to paragraph, and where each section states its Point.
 
 **When to use:** Run this before the writing patterns review. Its section map fixes the unit boundaries that review works within.
 
-**Score categories:** `index_discussion`, `fractal_structure`, `section_point_placement`, `key_term_coherence`
+**Score categories:** `index_discussion`, `fractal_structure`, `section_point_placement`
 
 ## What to look for
 
@@ -20,18 +20,15 @@ Every unit opens with an Index that gives readers the context for interpreting i
 Index-Discussion repeats across the essay, its sections, and their paragraphs. Each smaller Point governs its own unit and supports the Point above it. The Indexes should form a coherent storyboard when skimmed.
 
 ### 3. Section Point placement
-A body section states its Point once: either at the end of its Index or, after preparation, at the end of its Discussion.
-
-### 4. Key-term coherence
-An Index announces key concepts. Its Discussion connects every sentence to those concepts through repetition, close synonyms, pronouns, or clear semantic relationships.
+A body section states its Point once. By default the Point opens its Index. Placing it at the end of the Discussion is acceptable only when the reader needs preparation first.
 
 ## How to review
 
 1. Build the section map. Create body-section units only from visible headings, in source order. Record every unheaded run as an excerpt named "unstructured body", not as a section. Mapping an unheaded run does not establish that the prose has an effective section structure.
 2. For each unit record its rhetorical role, its Index (quoted exactly), and its section Point (quoted exactly). Do not put document-level or unstructured-body claims among section Points. Section Index quotes may contain only openings of identifiable body sections.
 3. Record the document Index and the skim-test sequence of Indexes and Points.
-4. Record announced major terms and any major terms the body introduces without announcement.
-5. Review all four categories from exact evidence copied with the source capitalization and punctuation. Never insert ellipses, brackets, or paraphrases into a quote.
+4. Record announced major terms and any major terms the body introduces without announcement. The sentence review uses them as its key-term list.
+5. Review all three categories from exact evidence copied with the source capitalization and punctuation. Never insert ellipses, brackets, or paraphrases into a quote.
 6. Provide concrete rewrite steps for material improvements.
 7. Return one score per category with the evidence that supports it. Pass the section map on to the writing patterns review.
 
@@ -53,18 +50,11 @@ Choose the description that best matches the whole category and support it with 
 - 1: no usable hierarchy connects the essay's parts.
 
 ### Section Point placement
-- 5: every identifiable body-section Point is placed deliberately at the end of its Index or prepared Discussion, stated once, and easy to locate.
-- 4: placement is consistently clear with one limited weakness.
+- 5: every identifiable body-section Point is stated once and easy to locate; each opens its Index unless the reader needs preparation, in which case it closes the Discussion.
+- 4: placement is consistently clear, but one Point closes its Discussion when it could have opened the Index, or one placement has another limited weakness.
 - 3: several section Points are recoverable but late, repeated, or weakly prepared.
 - 2: section Points are routinely buried, duplicated, or disconnected from their units.
 - 1: no body sections or section Points can be identified.
-
-### Key-term coherence
-- 5: Indexes announce needed concepts and thematic strings connect every sentence in their Discussions.
-- 4: central strings remain clear, with limited drift or underdevelopment.
-- 3: unprepared concepts, dropped promises, or broken strings repeatedly require reorientation.
-- 2: Indexes and Discussions use substantially disconnected vocabularies.
-- 1: no stable thematic strings connect framing and Discussion.
 
 ## Expected result shape
 {
@@ -76,8 +66,8 @@ Choose the description that best matches the whole category and support it with 
   },
   findings: [{ category, evidence: string[], note }],
   recommendations: [{ category, diagnosis, rewrite_steps: string[] }],
-  scores: { index_discussion: 1-5, fractal_structure: 1-5, section_point_placement: 1-5, key_term_coherence: 1-5 },
-  score_reasons: { index_discussion, fractal_structure, section_point_placement, key_term_coherence }
+  scores: { index_discussion: 1-5, fractal_structure: 1-5, section_point_placement: 1-5 },
+  score_reasons: { index_discussion, fractal_structure, section_point_placement }
 }
 
 ## Worked examples
@@ -104,19 +94,12 @@ then "A useful cooling plan follows that experience."
 Bad: replace the "Follow one journey" section with a history of municipal tree planting. The new section interrupts the movement from the three factors to their combined effect on one person.
 
 ### 3. Section Point placement
+Both sections below close their Discussions with the Point. That is acceptable here because each Point depends on preparation: a concrete case in one, a causal chain in the other.
 Good, prepared by a concrete case. Section "Shade the places people cannot avoid". Preparation: the bus-shelter example and the map of unavoidable journeys. Point: "Shade becomes useful when its location follows people's routines."
 Good, prepared by a causal chain. Section "Heat remains after the sun moves on". Preparation: "Dark paving absorbs sunlight throughout the afternoon." then "That stored energy warms nearby walls and walkways after sunset." then "The released heat then reaches homes just as residents return for the evening." Point: "These changes matter because evening conditions depend partly on what the neighbourhood absorbed earlier."
 
 Bad, repeated Point: add "Useful shade follows people's routines." directly below the Shade heading while keeping the same Point at the section's end. The conclusion is announced before the example and repeated after it.
 Bad reading, wrong resolution: labelling "Cooling plans should therefore respond to three features of daily experience..." as the Shade section Point. That sentence governs the whole essay, not that section.
 Bad reading, list item: labelling "Morning: children walk to school as streets begin to warm." as the Averages section Point. It is one time-specific example, not the governing claim.
-
-### 4. Key-term coherence
-Each announced idea is developed in its section and recombined in the journey without changing meaning.
-- "where people are exposed" is developed as "unavoidable journeys" and "Shade becomes useful when its location follows people's routines.", then recombined as "Most of her exposure occurs before she reaches them."
-- "how streets store heat" is developed as "stored energy" and "what the neighbourhood absorbed earlier", then recombined as "a block that retained heat through the afternoon" and "reflective material on the block's roof".
-- "when relief is needed" is developed as Morning, Afternoon, Evening, Night and "when an intervention must work", then recombined as "six in the evening" and "at the time she travels".
-
-Bad: keep the introduction's promise, but discuss tree species in the first section, construction costs in the second, and sensor brands in the third. The body stays related to cooling, but its thematic strings no longer develop exposure, stored heat, and timing.
 
 The examples refer to the worked example essay in [references/example-essay.md](references/example-essay.md); read it when calibrating a review.
