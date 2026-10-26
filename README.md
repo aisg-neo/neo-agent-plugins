@@ -40,3 +40,53 @@ codex plugin add writer@neo-agent-plugins
 ### Other harnesses
 
 Any harness that reads Agent Skills can load the folders in `agents/skills/` directly.
+
+## Evals
+
+`evals/` holds [promptfoo](https://promptfoo.dev) checks on how the essay skills score. Each case in `evals/cases/` is the example essay with one thing broken, such as a key term renamed partway through. The broken category should score lower, and unrelated categories should stay high.
+
+Every case runs three ways:
+
+| Provider | How the skill is used | Model access |
+| --- | --- | --- |
+| `claude-code` | Claude Code loads the plugin from `claude/` and runs `/writer:<skill>` | Your normal Claude Code setup |
+| `codex` | Codex finds the skills in a copied `.agents/skills/` folder and runs `$<skill>` | Your normal Codex setup (`~/.codex/config.toml`) |
+| `raw-api` | The skill text is the system prompt, so a failure here points at the instructions, not a harness | `google/gemini-3.8-flash` through Vercel AI Gateway |
+
+The gateway key for `raw-api` is `AI_GATEWAY_API_KEY` in the Infisical project `dev-server-1` (`dev` environment, `/skills` folder).
+
+```
+cd evals
+npm install
+npx infisical login
+npm run eval
+```
+
+Add `-- --filter-providers codex` to run one provider, or `-- --repeat 3` to check that scores are stable.
+
+Results of every run are saved locally in `~/.promptfoo/promptfoo.db`:
+
+- `npm run summary` prints the latest run as a table: pass or fail, provider, case, scores, and which check failed.
+- `npm run list` lists past runs; `npm run summary -- <eval id>` prints one of them.
+- `npm run view` opens the promptfoo web viewer on port 15500 for full outputs.
+
+### Sharing results
+
+Runs stay local until you share them. Share only the final run for a Linear issue, and start it with the issue ID as its description so it can be traced back to the issue and its PR:
+
+```bash
+npm run eval -- --description "KFC-21: hedging rule"
+npm run share
+```
+
+`npm run share` uploads the latest run to the self-hosted promptfoo at https://eval.kongfast.cloud, where Grok Bot and other agents read it through the Executor `promptfoo` app. The server has no login, so anyone on the LAN or tailnet can view or delete runs.
+
+### Adding articles
+
+Good articles are linked in a Linear issue. To pin one as an eval case:
+
+```bash
+npm run import -- <url> --issue ENG-123
+```
+
+This writes `evals/cases/<slug>/article.md` with the source, issue and fetch date in its frontmatter, and downloads the article's images into `images/` next to it. Review the file before committing: extraction can keep page leftovers such as bylines, and pages that need JavaScript or sit behind a paywall fail with an error.
