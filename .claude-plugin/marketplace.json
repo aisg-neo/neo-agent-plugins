@@ -10,7 +10,7 @@
     {
       "name": "writer",
       "source": "./claude",
-      "description": "Essay review skills: architecture, patterns and framing reviewers, plus a combined essay review."
+      "description": "Essay review skills: architecture, patterns, sentence and framing reviewers, plus a combined essay review."
     }
   ]
 }

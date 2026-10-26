@@ -1,6 +1,6 @@
 {
   "name": "writer",
   "version": "0.1.0",
-  "description": "Essay review skills: discourse architecture, writing patterns and framing reviewers, plus a combined essay review.",
+  "description": "Essay review skills: discourse architecture, writing patterns, sentence and framing reviewers, plus a combined essay review.",
   "author": { "name": "AI Singapore" }
 }
